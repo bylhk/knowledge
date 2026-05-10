@@ -27,8 +27,8 @@ Predictive Maintenance is a primary value driver for the John Crane division, di
 #### Failure Prediction
 The failure prediction model forecasts specific failure windows and types per machine per client, serving as the foundational intelligence layer for the PdM suite.
 
-*   **Input Data:** IIoT and sensor telemetry, historical maintenance records, weather forecasts, and market seasonality (peak vs. holiday demand).
-*   **Prediction Output:** Estimated time to failure (TTF), failure mode classification, and localized demand forecasts.
+*   **Input Data:** IIoT and sensor telemetry, historical maintenance records, weather history, and market seasonality (peak vs. holiday demand).
+*   **Prediction Output:** Estimated time to failure (TTF), failure mode classification, and maintenance demand forecasts.
 *   **Model Strategy:** Traditional machine learning frameworks (e.g., **Scikit-learn, XGBoost**) are prioritized. These models offer high interpretability and robust validation, essential for industrial engineering environments.
 
 #### Warehouse Management Agent

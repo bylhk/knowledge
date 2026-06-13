@@ -8,6 +8,14 @@ A structured reference for MLOps, software engineering, and machine learning bes
 
 ```
 knowledge/
+├── ai-engineering/
+│   ├── agents/             Agentic patterns, memory, tool use, MCP
+│   ├── evaluation/         Measuring retrieval and generation quality
+│   ├── llm_core/           Core LLM techniques: prompts, output, customisation, fine-tuning
+│   ├── production/         Deployment, efficiency, cost, security, observability
+│   ├── rag/                RAG pipeline: ingestion → quality → chunking → embedding → retrieval
+│   └── tooling/            Frameworks, UI, and package references
+│       └── packages/       Package comparison tables
 ├── cicd/                   CI/CD pipeline design and configuration
 ├── dashboard/              Observability, metrics, and dashboards
 ├── data/                   Data processing tools, SQL, dtypes, file formats, and config validation
@@ -28,6 +36,65 @@ knowledge/
 ---
 
 ## Index
+
+### AI-Engineering
+
+#### agents/ — Agentic Architectures
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/agents/agentic_architectures.md](ai-engineering/agents/agentic_architectures.md) | Agent patterns: ReAct, plan-and-execute, tool calling, multi-agent, reflection, human-in-the-loop, LangGraph |
+| [ai-engineering/agents/memory_and_conversation.md](ai-engineering/agents/memory_and_conversation.md) | Memory types: buffer, window, summary, entity, vector-backed, LangGraph store, session persistence |
+| [ai-engineering/agents/model_context_protocol.md](ai-engineering/agents/model_context_protocol.md) | MCP standard: building servers, tools/resources/prompts, transports (stdio/SSE), configuration, testing |
+
+#### evaluation/ — Quality Measurement
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/evaluation/retrieval_evaluation.md](ai-engineering/evaluation/retrieval_evaluation.md) | Retrieval metrics: precision@k, recall@k, MRR, NDCG, hit rate — with evaluation harnesses |
+| [ai-engineering/evaluation/agent_response_evaluation.md](ai-engineering/evaluation/agent_response_evaluation.md) | Response quality: LLM-as-judge, RAGAS, DeepEval, ROUGE, BERTScore, trajectory eval, safety eval |
+
+#### llm_core/ — Core LLM Techniques
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/llm_core/llm_customisation_strategies.md](ai-engineering/llm_core/llm_customisation_strategies.md) | When to use prompting vs RAG vs fine-tuning vs compound systems |
+| [ai-engineering/llm_core/prompt_engineering_patterns.md](ai-engineering/llm_core/prompt_engineering_patterns.md) | Prompt patterns: system prompts, few-shot, CoT, ToT, ReAct, self-consistency, decomposition |
+| [ai-engineering/llm_core/prompt_optimisation.md](ai-engineering/llm_core/prompt_optimisation.md) | Automated prompt improvement: DSPy, APE, PromptFoo, TextGrad, OPRO |
+| [ai-engineering/llm_core/structured_output.md](ai-engineering/llm_core/structured_output.md) | Forcing structured LLM output: Guidance, Outlines, LangChain, Instructor, provider-native JSON mode |
+| [ai-engineering/llm_core/fine_tuning_lora.md](ai-engineering/llm_core/fine_tuning_lora.md) | Parameter-efficient fine-tuning: LoRA, QLoRA, GLoRA, Unsloth, LLaMA-Factory, DeepSpeed |
+
+#### production/ — Production Systems
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/production/deployment_and_serving.md](ai-engineering/production/deployment_and_serving.md) | Serving patterns: FastAPI, vLLM, Docker, Kubernetes, CI/CD, A/B testing, canary, serverless |
+| [ai-engineering/production/llm_efficiency.md](ai-engineering/production/llm_efficiency.md) | Inference optimisation: quantisation (GPTQ/AWQ/GGUF), KV cache, vLLM, speculative decoding, Flash Attention |
+| [ai-engineering/production/cost_management.md](ai-engineering/production/cost_management.md) | Cost control: model routing, caching, token reduction, budget tracking, spend monitoring |
+| [ai-engineering/production/observability.md](ai-engineering/production/observability.md) | LLM observability: Langfuse, LangSmith, Phoenix, OpenTelemetry, custom logging, dashboards |
+| [ai-engineering/production/guardrails.md](ai-engineering/production/guardrails.md) | Input/output protection: NeMo Guardrails, Guardrails AI, LLM-as-judge, prompt injection defence |
+| [ai-engineering/production/llm_security_red_teaming.md](ai-engineering/production/llm_security_red_teaming.md) | Security: prompt injection, jailbreaking, data extraction, red teaming methodology, defence-in-depth |
+
+#### rag/ — RAG Pipeline
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/rag/document_ingestion.md](ai-engineering/rag/document_ingestion.md) | PDF/image/scan extraction: Tesseract, Unstructured, Vision LLMs, PyMuPDF, LlamaParse, Marker |
+| [ai-engineering/rag/data_quality_post_ingestion.md](ai-engineering/rag/data_quality_post_ingestion.md) | Post-extraction validation: encoding fixes, OCR quality scoring, language detection, deduplication |
+| [ai-engineering/rag/chunking_strategies.md](ai-engineering/rag/chunking_strategies.md) | 9 chunking methods: recursive, semantic, agentic, structure-aware, parent-child, proposition, late chunking, contextual headers, multi-vector |
+| [ai-engineering/rag/data_quality_post_chunking.md](ai-engineering/rag/data_quality_post_chunking.md) | Chunk validation: length checks, deduplication, coherence scoring, distribution analysis |
+| [ai-engineering/rag/embedding_methods.md](ai-engineering/rag/embedding_methods.md) | Embedding models and techniques: cloud APIs, local models, code-specific, hybrid dense+sparse, fine-tuned, multi-modal |
+| [ai-engineering/rag/vector_databases.md](ai-engineering/rag/vector_databases.md) | Vector DB operations: ChromaDB, Qdrant, Pinecone, FAISS, Weaviate — insert, query, filter, update |
+| [ai-engineering/rag/retrieval_methods.md](ai-engineering/rag/retrieval_methods.md) | Retrieval strategies: similarity, MMR, multi-query, hybrid, reranking, compression, HyDE, step-back |
+
+#### tooling/ — Frameworks & Packages
+
+| File | Contents |
+|------|----------|
+| [ai-engineering/tooling/langchain_stack.md](ai-engineering/tooling/langchain_stack.md) | LangChain ecosystem architecture diagram and data flow |
+| [ai-engineering/tooling/ai_ui.md](ai-engineering/tooling/ai_ui.md) | Chat UI frameworks: Chainlit, Gradio, Streamlit, Mesop, Panel, Open WebUI |
+| [ai-engineering/tooling/packages/langchain_ecosystem.md](ai-engineering/tooling/packages/langchain_ecosystem.md) | LangChain-specific package table: all categories with descriptions |
+| [ai-engineering/tooling/packages/useful_packages.md](ai-engineering/tooling/packages/useful_packages.md) | General AI/LLM package comparison table across all categories |
 
 ### CI/CD
 
